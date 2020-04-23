@@ -1,4 +1,4 @@
-#![feature(box_syntax, box_patterns, half_open_range_patterns, or_patterns)]
+#![feature(box_syntax, box_patterns, half_open_range_patterns)]
 
 #[macro_use]
 extern crate lazy_static;
