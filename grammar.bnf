@@ -1,0 +1,56 @@
+
+<mod> ::=
+  | "use" <mod-path> "\n"
+  | "pub" <var> "=" <block> "\n"
+
+<prog> ::= <stmt> (";"|"\n") <prog> | <stmt>
+
+<stmt> ::=
+  | ()
+  | <expr>
+  | <var> "=" <expr>
+  | "break"
+  | "continue"
+  | "exit" { <expr> } ?
+  | "return" { <expr> } ?
+
+<pipeline> ::= { <expr> "|" } ? <exec> { "|" <exec> } * { "|" "_" } ?
+
+<exec> ::= <cmd> { "(" <expr> ")" | .* } * | "&" <expr>
+
+<expr> ::= <pipeline> | <bool-expr>
+
+<atom> ::=
+  | "(" <expr> ")"
+  | "(" <pipeline> ")"
+  | <str>
+  | <num>
+  | <array>
+  | <hash>
+  | <range>
+  | <block>
+
+<block> ::= "{" <prog> "}"
+
+<if-expr> ::= "if" <bool-expr> <block> { "else" { <block> | <if-expr> } } ?
+
+<loop> ::= "loop" <block>
+
+<bool-expr> ::= <cond-expr> { ("&&"|"||"|"=="|"!="|">"|"<"|"<="|">=") <cond-expr> } *
+
+<cond-expr> ::= <term-expr> { ("+"|"-") <term-expr> } *
+
+<term-expr> ::= <factor-expr> { ("*"|"/"|"%") <factor-expr> } *
+
+<factor-expr> ::= <atom>
+
+<range> ::= <atom> ".." <atom>
+
+# TODO
+<mod-path> ::= [A-z_]+ { "::" [A-z_]+ } *
+<var>
+<cmd>
+<str> # interpolation
+<num>
+<array>
+<hash>
