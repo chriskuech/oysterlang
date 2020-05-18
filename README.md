@@ -10,4 +10,6 @@ Oyster is a new shell scripting language written in rust with the goal of bringi
 | Standard control flow syntax | ☒ | 🗹 | ☐ |
 | Higher-order functions | ☒ | 🗹 | ☐ |
 
-☒ Not implemented | ☐ Planned | 🗹 Implemented
+☒ Not implemented <br>
+☐ Planned <br>
+🗹 Implemented
