@@ -2,11 +2,11 @@ Oyster is a new shell scripting language written in rust with the goal of bringi
 
 ## Feature comparison and roadmap
 |  | `bash` | `pwsh` | 🦪 |
-| :- | :-: | :-: | :-:: |
+| :- | :-: | :-: | :-: |
 | Variables are environment variables | 🗹 | ☒ | 🗹 |
 | Standard expression syntax | ☒ | 🗹 | 🗹 |
 | Standard control flow syntax | ☒ | 🗹 | ☐ |
 | Bufferless piping | 🗹 | ☒ | ☐ |
 | Higher-order functions | ☒ | 🗹 | ☐ |
 
-☒ Not implemented  ☐ Planned  🗹 Implemented
+☒ Not implemented | ☐ Planned | 🗹 Implemented
